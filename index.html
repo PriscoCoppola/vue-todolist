@@ -50,15 +50,33 @@
                     <span
                         :class="{ completed: todo.completed }"
                         @click="updateTodo(index)"
-                    >{{ todo.text }}</span>
+                    >{{ todo.text }}
+                    </span>
+                    <div>
+                        <i 
+                            class="fas fa-pen"
+                            @click="edit(index)"
+                        ></i>
                         <i  
                             class="fas fa-minus"
                             @click="removeTodo(index)"
                         ></i>
+                    </div>
                 </li>
             </ul>
             <h3 v-else>No Item</h3>
         </main>
+
+        <section class="edit" v-show="editTodo.visibility">
+            <div class="edit-item">
+                <h3>Update ToDo</h3>
+                <input type="text" v-model="editTodo.text">
+                <div>
+                    <button @click="updateTodo">Update</button>
+                    <button @click="cancelTodo">Cancel</button>
+                </div>
+            </div>
+        </section>
         
         <div class="image">
             <img src="./img/kawasaki-z800-logo-ABE489FED1-seeklogo.com.png" alt="Logo Kawasaki Z">
