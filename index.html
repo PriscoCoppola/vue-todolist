@@ -29,32 +29,39 @@
             
             <!-- Add New ToDo -->
             <div class="add-todo">
-                <input type="text"
-                placeholder="Insert New ToDo"
-                v-model="newTodo"
-                @keyup.enter="addTodo"
+                <input 
+                    type="text"
+                    placeholder="Insert New ToDo"
+                    v-model="newTodo"
+                    @keyup.enter="addTodo"
                 >
-                <i class="fas fa-plus"
-                @click="addTodo"
+                <i 
+                    class="fas fa-plus"
+                    @click="addTodo"
                 ></i>
             </div>
 
             <!-- ToDo List -->
-            <ul class="list"
+            <ul 
+                class="list"
                 v-if="todos.length > 0"
             >
                 <li v-for="(todo, index) in todos">
-                    <span>{{ todo.text }}</span>
-                    <i class="fas fa-minus"
-                    @click="removeTodo(index)"
-                    ></i>
+                    <span
+                        :class="{ completed: todo.completed }"
+                        @click="updateTodo(index)"
+                    >{{ todo.text }}</span>
+                        <i  
+                            class="fas fa-minus"
+                            @click="removeTodo(index)"
+                        ></i>
                 </li>
             </ul>
-            <h4 v-else>No Item</h4>
+            <h3 v-else>No Item</h3>
         </main>
-
+        
         <div class="image">
-            <img src="./img/kawasaki-z800-logo-ABE489FED1-seeklogo.com.png" alt="">
+            <img src="./img/kawasaki-z800-logo-ABE489FED1-seeklogo.com.png" alt="Logo Kawasaki Z">
         </div>
 
     </div>

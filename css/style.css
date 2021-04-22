@@ -57,27 +57,32 @@
 .list li {
     display: flex;
     justify-content: space-between;
-    list-style: none;
-    padding: 10px 15px;
-    border-bottom: 1px solid #34c903;
     margin: 10px 0;
+    padding: 10px 15px;
+    list-style: none;
+    border-bottom: 1px solid #34c903;
 }
 
 .list li:last-child {
     border: 0;
 }
 
+.list li span,
 .list li i {
     cursor: pointer;
 }
 
-h4 {
-    padding: 4rem 0 0 15px;
+h3 {
+    margin: 4rem 15px;
 }
 
-/* SVG */
 .image {
     display: flex;
     justify-content: center;
-    margin: 2rem 0 0;
+    margin: 4rem auto;
+}
+
+/* Vue */
+.completed {
+    text-decoration: line-through;
 }

@@ -42,7 +42,11 @@ const root = new Vue({
         // Remove ToDo on the list
         removeTodo(index) {
             this.todos.splice(index, 1);
-        }
+        },
 
+        // Update ToDo on the list
+        updateTodo(index) {
+            this.todos[index].completed = ! this.todos[index].completed
+        }
     }
 })
