@@ -3,10 +3,81 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Zen Dots', cursive;
+    color: #34c903;
+    background-color: #202020;
 }
 
 /* Layout */
 .container {
-    max-width: 500px;
-    margin: 50px auto;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header h1 {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* Main */
+/* Add New ToDo */
+.add-todo {
+    display: flex;
+    align-items: center;
+}
+
+.add-todo input {
+    flex-grow: 1;
+    padding: 5px 15px;
+    border: 0;
+    border-bottom: 3px solid #34c903;
+    border-radius: 5px;
+    background-color: #101010;
+    outline: none;
+    cursor: pointer;
+}
+
+.add-todo input:hover,
+.add-todo input:focus {
+    background-color: #000
+}
+
+.add-todo i {
+    padding: 0 1rem;
+    cursor: pointer;
+}
+
+/* ToDo List */
+.list {
+    margin-top: 2rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.list li {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 10px 15px;
+    border-bottom: 1px solid #34c903;
+    margin: 10px 0;
+}
+
+.list li:last-child {
+    border: 0;
+}
+
+.list li i {
+    cursor: pointer;
+}
+
+h4 {
+    padding: 4rem 0 0 15px;
+}
+
+/* SVG */
+.image {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0 0;
 }

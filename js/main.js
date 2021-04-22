@@ -29,12 +29,14 @@ const root = new Vue({
     methods: {
         // Add Todo on the list
         addTodo() {
-            this.todos.push({
-                text: this.newTodo,
-                completed: false,
-            })
-
-            this.newTodo = '';
+            if (this.newTodo !== '' && this.newTodo.trim()) {
+                this.todos.push({
+                    text: this.newTodo,
+                    completed: false,
+                })
+    
+                this.newTodo = '';
+            }
         },
 
         // Remove ToDo on the list
