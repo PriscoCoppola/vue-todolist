@@ -26,19 +26,24 @@
 
         <!-- Main -->
         <main class="main-content">
+            
+            <!-- Add New ToDo -->
             <input type="text"
             placeholder="Insert New ToDo"
+            v-model="newTodo"
+            @keyup.enter="addTodo"
             >
-            <i class="fas fa-plus"></i>
+            <i class="fas fa-plus"
+            @click="addTodo"
+            ></i>
 
+            <!-- ToDo List -->
             <ul>
-                <li>
-                    <span>test test test</span>
-                    <i class="fas fa-minus"></i>
-                </li>
-                <li>
-                    <span>test test test</span>
-                    <i class="fas fa-minus"></i>
+                <li v-for="(todo, index) in todos">
+                    <span>{{ todo.text }}</span>
+                    <i class="fas fa-minus"
+                    @click="removeTodo(index)"
+                    ></i>
                 </li>
             </ul>
         </main>
